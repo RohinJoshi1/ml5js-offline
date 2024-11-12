@@ -4,6 +4,7 @@ const path = require("path");
 const rimraf = require("rimraf");
 const { Readable } = require("stream");
 
+
 const outputDir = "src/offline/models";
 const tmpDir = "src/offline/models/tmp";
 
@@ -11,16 +12,19 @@ const tmpDir = "src/offline/models/tmp";
  * URLs of the models to fetch.
  */
 const modelURLs = {
-  HandPose: {
-    detectorLite:
-      "https://www.kaggle.com/api/v1/models/mediapipe/handpose-3d/tfJs/detector-lite/1/download", 
-    landmarkLite:
-      "https://www.kaggle.com/api/v1/models/mediapipe/handpose-3d/tfJs/landmark-lite/1/download",
-  },
+  // HandPose: {
+  //   detectorLite:
+  //     "https://www.kaggle.com/api/v1/models/mediapipe/handpose-3d/tfJs/detector-lite/1/download", 
+  //   landmarkLite:
+  //     "https://www.kaggle.com/api/v1/models/mediapipe/handpose-3d/tfJs/landmark-lite/1/download",
+  // },
   // FaceMesh: {
   //   detector: "https://www.kaggle.com/models/mediapipe/face-detection/tfJs/short/1/download",
   //   landMark: "https://www.kaggle.com/models/mediapipe/face-landmarks-detection/tfJs/face-mesh/1/download",
   // }
+  SelfieSegmentation: {
+     detector: "https://www.kaggle.com/models/mediapipe/selfie-segmentation/tfJs/general/1/download"
+  }
 };
 
 /**
