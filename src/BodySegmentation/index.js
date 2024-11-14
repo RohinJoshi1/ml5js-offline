@@ -186,7 +186,10 @@ class BodySegmentation {
       this.BACKGROUND = 0;
       this.PERSON = 255;
     }
-
+    if (this.loadOfflineModel) {
+      console.log("Attempting")
+      this.loadOfflineModel(modelConfig);
+    }
     await tf.ready();
     this.model = await tfBodySegmentation.createSegmenter(
       pipeline,
@@ -418,4 +421,5 @@ const bodySegmentation = (...inputs) => {
   return instance;
 };
 
+export {BodySegmentation}
 export default bodySegmentation;

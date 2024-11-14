@@ -25,6 +25,7 @@ const modelURLs = {
   SelfieSegmentation: {
      detector: "https://www.kaggle.com/models/mediapipe/selfie-segmentation/tfJs/general/1/download"
   }
+  // https://www.kaggle.com/models/mediapipe/selfie-segmentation/tfJs/general/1/z
 };
 
 /**
