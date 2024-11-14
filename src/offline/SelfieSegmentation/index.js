@@ -40,14 +40,22 @@ function loadOfflineModel(configObject) {
     "model.json",
     { type: "application/json" }
   );
+  const landmarkJsonFile = new File(
+    [JSON.stringify(detectorJson)],
+    "model.json",
+    { type: "application/json" }
+  );
 
   // Give the json data URLs.
-//   const landmarkJsonURL = URL.createObjectURL(landmarkJsonFile);
-  const detectorJsonURL = URL.createObjectURL(detectorJsonFile);
+  // const landmarkJsonURL = URL.createObjectURL(landmarkJsonFile);
+  // const detectorJsonURL = URL.createObjectURL(detectorJsonFile);
+  const modelURL =  URL.createObjectURL(detectorJsonFile);
 
   // Inject the URLs into the config object.
-//   configObject.landmarkModelUrl = landmarkJsonURL;
-  configObject.detectorModelUrl = detectorJsonURL;
+  // configObject.landmarkModelUrl = landmarkJsonURL;
+  // configObject.detectorModelUrl = detectorJsonURL;
+  // configObject.solutionPath = detectorJsonURL;
+  configObject.modelUrl = modelURL; 
 }
 
 export default loadOfflineModel;

@@ -47,32 +47,6 @@ class BodySegmentation {
   async loadModel() {
     let pipeline;
     let modelConfig;
-
-    //select the correct model based on mask type
-    // if (!this.modelName) {
-    //   this.modelName =
-    //     this.config.maskType === "parts" ? "BodyPix" : "SelfieSegmentation";
-    // } else {
-    //   if (this.config.maskType === "parts") {
-    //     if (this.modelName !== "BodyPix") {
-    //       console.warn(
-    //         `Expect model name to be "BodyPix" when maskType is "parts", but got "${this.modelName}". Using "BodyPix" instead.`
-    //       );
-    //       this.modelName = "BodyPix";
-    //     }
-    //   } else {
-    //     if (
-    //       this.modelName !== "SelfieSegmentation" &&
-    //       this.modelName !== "BodyPix"
-    //     ) {
-    //       console.warn(
-    //         `Expect model name to be "SelfieSegmentation" or "BodyPix", but got "${this.modelName}". Using "SelfieSegmentation" instead.`
-    //       );
-    //       this.modelName = "SelfieSegmentation";
-    //     }
-    //   }
-    // }
-
     if (this.modelName === "BodyPix") {
       pipeline = tfBodySegmentation.SupportedModels.BodyPix;
       modelConfig = handleOptions(
@@ -189,8 +163,10 @@ class BodySegmentation {
     if (this.loadOfflineModel) {
       console.log("Attempting")
       this.loadOfflineModel(modelConfig);
+      console.log("Loaded local model");
     }
     await tf.ready();
+    console.log(modelConfig);
     this.model = await tfBodySegmentation.createSegmenter(
       pipeline,
       modelConfig

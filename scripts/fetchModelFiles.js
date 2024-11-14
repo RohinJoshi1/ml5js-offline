@@ -23,7 +23,7 @@ const modelURLs = {
   //   landMark: "https://www.kaggle.com/models/mediapipe/face-landmarks-detection/tfJs/face-mesh/1/download",
   // }
   SelfieSegmentation: {
-     detector: "https://www.kaggle.com/models/mediapipe/selfie-segmentation/tfJs/general/1/download"
+     detector: "https://www.kaggle.com/models/mediapipe/selfie-segmentation/tfJs/general/1/download",
   }
   // https://www.kaggle.com/models/mediapipe/selfie-segmentation/tfJs/general/1/z
 };
