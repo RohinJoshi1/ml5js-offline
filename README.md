@@ -21,7 +21,10 @@ Please read our [Code of Conduct](https://github.com/ml5js/Code-of-Conduct), whi
 Before getting started with ml5.js, review our [Code of Conduct](https://github.com/ml5js/Code-of-Conduct). There are several ways you can use the ml5.js library:
 
 <!-- Anchor for automatic version update script, do not remove this comment -->
-
+- You can download and use offline models by building the project and adding the following in your scripts tag:
+  ```
+    <script src="../../dist/ml5-offline.js"></script>
+  ```
 - You can use the latest version (1.0.2) by adding it to the head section of your HTML document:
 
   **v1.0.2**
